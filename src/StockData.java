@@ -31,8 +31,7 @@ public class StockData {
     // You could make methods getName, getPrice and getQuantity simpler by using an auxiliary
     // private String method getField(String key, int fieldNo) to return the appropriate field as a String
    
-    
-    
+
     public static String getName(String key) {
         try {
             // Need single quote marks ' around the key field in SQL. This is easy to get wrong!
@@ -110,6 +109,7 @@ public class StockData {
             System.out.println(e);
         }
     }
+    
     public static void updateDescription(String key, String name, String description, String price) {
         // SQL UPDATE statement required. For instance if extra is 5 and key is "1111111" then updateStr is
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
@@ -133,10 +133,7 @@ public class StockData {
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
 //        INSERT INTO Room (Location , Capacity, RoomType) VALUES ('QA328', 40,'Lecture' );
 //        INSERT INTO Staff VALUES ('Chris','Walshaw','Lecturer','QM354',4857,'NO' );
-        
-        
-        
-        
+
         String addNewItem = "INSERT INTO Stock VALUES ('" + key + "' , '" + name + "' , '" + description + "' ,'" + price + "' , '" + quantity + "')";
         System.out.println(addNewItem);
         try {
@@ -153,10 +150,7 @@ public class StockData {
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
 //        INSERT INTO Room (Location , Capacity, RoomType) VALUES ('QA328', 40,'Lecture' );
 //        INSERT INTO Staff VALUES ('Chris','Walshaw','Lecturer','QM354',4857,'NO' );
-        
-        
-        
-        
+
         String addNewItem = "DELETE FROM Stock WHERE ID = ('" + key + "' )";
         System.out.println(addNewItem);
         try {
@@ -165,8 +159,6 @@ public class StockData {
             System.out.println(e);
         }
     }
-    
-    
 
     // close the database
     public static void close() {
@@ -177,6 +169,7 @@ public class StockData {
             System.out.println(e);
         }
     }
+
     public static int getNewKey() {
         int keyCounter = 1;
         for (int i = 0; i < 100; ++i){
@@ -186,9 +179,7 @@ public class StockData {
             } else {
                 keyCounter++;
             }
-            
         }
-        
         return keyCounter;
     }
 }
