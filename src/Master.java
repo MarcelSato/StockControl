@@ -22,6 +22,13 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 
+/*
+*
+*   created by Marcel Sato
+*   University of Greenwich Project
+*
+*
+*/
 public class Master extends JFrame implements ActionListener {
 
     private JButton check = new JButton("Check Stock");
