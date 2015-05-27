@@ -1,0 +1,26 @@
+------------------------------------------------------------------          ouih oj Invoice          ----------------------------------------------------------------
+
+
+
+          JAVA Electronics
+          123 Greenwich High Street
+          SE12 345
+          tel.: 020812345678
+
+
+          LED TV          unit price -    £610.0          quantity - 5
+          Total price = £3,050.00
+
+
+          Your order will be dispatched to:
+          ouih ;o oj
+
+          ;oj
+          n;ojn
+
+
+
+
+
+
+          Thanks for your custom ouih oj

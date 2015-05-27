@@ -1,0 +1,7 @@
+Card Number - 7894561234561234
+
+CVV - 3 digits - 789
+
+Value to charge = £10042.9
+
+Please confirm payment by email - marcel@sato.com

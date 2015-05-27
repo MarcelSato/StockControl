@@ -1,0 +1,29 @@
+------------------------------------------------------------------          lihu lih Invoice          ----------------------------------------------------------------
+
+
+
+          JAVA Electronics
+          123 Greenwich High Street
+          SE12 345
+          tel.: 020812345678
+
+
+          Galaxy Note 2          unit price -    £559.0          quantity - 1
+          BlackBerry Z10          unit price -    £450.0          quantity - 1
+          Wii U          unit price -    £240.0          quantity - 1
+          PSVita          unit price -    £240.0          quantity - 1
+          Total price = £1,489.00
+
+
+          Your order will be dispatched to:
+          lihu liuh lih
+
+          lgh
+          lkhg
+
+
+
+
+
+
+          Thanks for your custom lihu lih

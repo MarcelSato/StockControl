@@ -1,0 +1,30 @@
+------------------------------------------------------------------          Mr Sato Invoice          ----------------------------------------------------------------
+
+
+
+          JAVA Eletronics
+          123 Greenwich High Street
+          SE12 345
+          tel.: 020812345678
+
+
+          Van          unit price -    £5000.0          quantity - 1
+          Nokia Lumia          unit price -    £369.0          quantity - 1
+          iPod Classic          unit price -    £100.0          quantity - 1
+          Lenovo Ideapad          unit price -    £559.0          quantity - 1
+          Canon EOS 1100D          unit price -    £229.99          quantity - 1
+          Total price = £6,257.99
+
+
+          Your order will be dispatched to:
+          Mr Marcel Sato
+
+          49, High Street
+          SE10 0LP
+
+
+
+
+
+
+          Thanks for your custom Mr Sato

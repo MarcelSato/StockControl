@@ -1,0 +1,26 @@
+------------------------------------------------------------------          Miss Kairuz Invoice          ----------------------------------------------------------------
+
+
+
+          JAVA Electronics
+          123 Greenwich High Street
+          SE12 345
+          tel.: 020812345678
+
+
+          iPhone 5          unit price -    £529.0          quantity - 1
+          Total price = £529.00
+
+
+          Your order will be dispatched to:
+          Miss Karriza Kairuz
+
+          4 Winstead  gardens
+          RM10 7TL
+
+
+
+
+
+
+          Thanks for your custom Miss Kairuz

@@ -1,0 +1,9 @@
+
+
+          Card Number - poi
+
+          CVV - 3 digits - poi
+
+          Value to charge = £0.0
+
+          Please confirm payment by email - poi
