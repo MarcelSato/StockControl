@@ -142,6 +142,7 @@ public final class PurchaseItem extends JFrame implements ActionListener {
                 stockTf.setText("");
                 stockTf.requestFocus();
             } else {
+                                                                                        // Try to change image storage and display method
                 imageLocation = "res/images/" + stockTf.getText() + ".png";
                 Image myImage = getToolkit().createImage(imageLocation);
                 ImageIcon productImage = new ImageIcon(myImage);

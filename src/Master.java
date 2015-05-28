@@ -40,7 +40,7 @@ public class Master extends JFrame implements ActionListener {
     public static void main(String[] args) {
 
         StockData connect = new StockData();
-        
+
         try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(
