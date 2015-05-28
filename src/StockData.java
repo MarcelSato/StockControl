@@ -2,46 +2,41 @@
 // NOTE: You should not have to make any changes to the other
 // Java GUI classes for this to work, if you complete it correctly.
 // Indeed these classes shouldn't even need to be recompiled
+
 import java.sql.*; // DB handling package
-import java.io.*;
 import javax.swing.JOptionPane;
 
 public class StockData {
 
-    private static Connection stockDataBase;
+    private static Connection conn;
     private static Statement stmt;
 
-    static {
-        // standard code to open a connection and statement to an Access database
+    public StockData() {
         try {
-            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            String sourceURL = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ="
-                    + new File("Stock.accdb").getAbsolutePath() + ";";
-            stockDataBase = DriverManager.getConnection(sourceURL, "admin", "");
-            stmt = stockDataBase.createStatement();
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/StockControl", "sm851", "2gianna2");
+            stmt = conn.createStatement();
+
         } // The following exceptions must be caught
-        catch (ClassNotFoundException cnfe) {
-            System.out.println(cnfe);
-        } catch (SQLException sqle) {
-            System.out.println(sqle);
+        catch (Exception ex) {
+            System.out.println(ex);
+
         }
-
     }
-
     // You could make methods getName, getPrice and getQuantity simpler by using an auxiliary
     // private String method getField(String key, int fieldNo) to return the appropriate field as a String
-   
+
 
     public static String getName(String key) {
         try {
             // Need single quote marks ' around the key field in SQL. This is easy to get wrong!
             // For instance if key was "1111111" the SELECT statement would be:
             // SELECT * FROM Stock WHERE key = '1111111'
-            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE Id = '" + key + "'");
+            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE stockID = '" + key + "'");
             if (res.next()) { // there is a result
                 // the name field is the second one in the ResultSet
                 // Note that with  ResultSet we count the fields starting from 1
-                return res.getString(2);
+                return res.getString("name");
             } else {
                 return null;
             }
@@ -50,12 +45,12 @@ public class StockData {
             return null;
         }
     }
-    
+
     public static String getDescription(String key) {
         try {
-            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE Id = '" + key + "'");
+            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE stockID = '" + key + "'");
             if (res.next()) {
-                return res.getString(3);
+                return res.getString("description");
                 } else {
                 return null;
             }
@@ -67,9 +62,9 @@ public class StockData {
 
     public static double getPrice(String key) {
         try {
-            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE Id = '" + key + "'");
+            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE stockID = '" + key + "'");
             if (res.next()) {
-                double a = Double.parseDouble(res.getString(4));
+                double a = Double.parseDouble(res.getString("price"));
                 return a;
             } else {
                 return 0.0;
@@ -82,9 +77,9 @@ public class StockData {
 
     public static int getQuantity(String key) {
         try {
-            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE ID = '" + key + "'");
+            ResultSet res = stmt.executeQuery("SELECT * FROM Stock WHERE stockID = '" + key + "'");
             if (res.next()) {
-                int a = Integer.parseInt(res.getString(5));
+                int a = Integer.parseInt(res.getString("quantity"));
                 return a;
             } else {
                 return -1;
@@ -101,7 +96,7 @@ public class StockData {
     public static void update(String key, int extra) {
         // SQL UPDATE statement required. For instance if extra is 5 and key is "1111111" then updateStr is
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
-        String updateStr = "UPDATE Stock SET Quantity = Quantity + " + extra + " WHERE ID = '" + key + "'";
+        String updateStr = "UPDATE Stock SET Quantity = Quantity + " + extra + " WHERE stockID = '" + key + "'";
         System.out.println(updateStr);
         try {
             stmt.executeUpdate(updateStr);
@@ -109,13 +104,13 @@ public class StockData {
             System.out.println(e);
         }
     }
-    
+
     public static void updateDescription(String key, String name, String description, String price) {
         // SQL UPDATE statement required. For instance if extra is 5 and key is "1111111" then updateStr is
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
-        String updateName = "UPDATE Stock SET Name = '" + name + "' WHERE ID = '" + key + "'";
-        String updateDescription = "UPDATE Stock SET Description = '" + description + "' WHERE ID = '" + key + "'";
-        String updatePrice = "UPDATE Stock SET Price = '" + price + "' WHERE ID = '" + key + "'";
+        String updateName = "UPDATE Stock SET Name = '" + name + "' WHERE stockID = '" + key + "'";
+        String updateDescription = "UPDATE Stock SET Description = '" + description + "' WHERE stockID = '" + key + "'";
+        String updatePrice = "UPDATE Stock SET Price = '" + price + "' WHERE stockID = '" + key + "'";
         System.out.println(updateName);
         System.out.println(updateDescription);
         System.out.println(updatePrice);
@@ -127,7 +122,7 @@ public class StockData {
             System.out.println(e);
         }
     }
-    
+
     public static void addNewItem(String key, String name, String description, String price, String quantity) {
         // SQL UPDATE statement required. For instance if extra is 5 and key is "1111111" then updateStr is
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
@@ -142,16 +137,16 @@ public class StockData {
             System.out.println(" SQL error found \n" + e);
             JOptionPane.showMessageDialog(null, "Please don't use any special characters");
         }
-        
+
     }
-    
+
     public static void deleteItem(String key) {
         // SQL UPDATE statement required. For instance if extra is 5 and key is "1111111" then updateStr is
         // UPDATE Stock SET stockQuantity = stockQuantity + 5 WHERE key = '1111111'
 //        INSERT INTO Room (Location , Capacity, RoomType) VALUES ('QA328', 40,'Lecture' );
 //        INSERT INTO Staff VALUES ('Chris','Walshaw','Lecturer','QM354',4857,'NO' );
 
-        String addNewItem = "DELETE FROM Stock WHERE ID = ('" + key + "' )";
+        String addNewItem = "DELETE FROM Stock WHERE stockID = ('" + key + "' )";
         System.out.println(addNewItem);
         try {
             stmt.executeUpdate(addNewItem);
@@ -163,7 +158,7 @@ public class StockData {
     // close the database
     public static void close() {
         try {
-            stockDataBase.close();
+            conn.close();
         } catch (Exception e) {
             // this shouldn't happen
             System.out.println(e);

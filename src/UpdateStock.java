@@ -61,19 +61,10 @@ public class UpdateStock extends JFrame implements ActionListener, ChangeListene
 
     public UpdateStock() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("res/images/others/b.png"));
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         itemSp.addChangeListener(this);
         stockNo.addActionListener(this);
-        
-        
+
         lookFormat(check, 0);
         lookFormat(updateQuantity, KeyEvent.VK_Q);
         lookFormat(updateDescription, KeyEvent.VK_U);       

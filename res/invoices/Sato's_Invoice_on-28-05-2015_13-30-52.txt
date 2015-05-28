@@ -1,0 +1,28 @@
+------------------------------------------------------------------          Mr Sato Invoice          ----------------------------------------------------------------
+
+
+
+          JAVA Electronics
+          123 Greenwich High Street
+          SE12 345
+          tel.: 020812345678
+
+
+          Galaxy Note 2          unit price -    £399.0          quantity - 2
+          Playstation 3          unit price -    £120.0          quantity - 1
+          Apple TV          unit price -    £100.0          quantity - 1
+          Total price = £1,018.00
+
+
+          Your order will be dispatched to:
+          Mr Marcel Sato
+
+          49, Glenforth Street
+          SE10 0JQ
+
+
+
+
+
+
+          Thanks for your custom Mr Sato
