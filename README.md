@@ -1,5 +1,5 @@
 Stock Control Java application
-Changing DB
+DB Changed from ACCESS to mySQL
 This branch replaces an ACCESS DB with mySQL
 Initial stage
 

@@ -29,6 +29,7 @@ import javax.swing.border.Border;
 *
 *
 */
+
 public class Master extends JFrame implements ActionListener {
 
     private JButton check = new JButton("Check Stock");

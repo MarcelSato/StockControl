@@ -16,16 +16,13 @@ public class StockData {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/StockControl", "sm851", "2gianna2");
             stmt = conn.createStatement();
-
         } // The following exceptions must be caught
         catch (Exception ex) {
             System.out.println(ex);
-
         }
     }
     // You could make methods getName, getPrice and getQuantity simpler by using an auxiliary
     // private String method getField(String key, int fieldNo) to return the appropriate field as a String
-
 
     public static String getName(String key) {
         try {
