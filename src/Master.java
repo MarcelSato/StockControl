@@ -27,6 +27,7 @@ import javax.swing.border.Border;
 *   created by Marcel Sato
 *   University of Greenwich Project
 *   DB has been changed from ACCESS to mySQL
+*   Next step try to implement Spring management
 *
 */
 
