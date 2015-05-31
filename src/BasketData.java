@@ -5,12 +5,9 @@ class BasketData {
     ArrayList<Integer> keys;
     ArrayList<Integer> quantities;
     int maxProducts = 5; // did this initially to allow product quantity to be changed in update stock, 
-                         //but is not possible because of the way I did the buttons. 
-
+                         //but is not possible because of the way I did the buttons.
     BasketData() {
-        
-        
-        
+
     keys = new ArrayList();
     quantities = new ArrayList();
     }
@@ -46,7 +43,6 @@ class BasketData {
         
         return keys;
     }
-    
     
     public ArrayList getQuantities(){
         
@@ -93,8 +89,7 @@ class BasketData {
                 qInBasket = quantities.get(i);
             }
         }
-        
-        
+
         System.out.println("this is basketData " + qInBasket +" "+key);
         return qInBasket;
     }

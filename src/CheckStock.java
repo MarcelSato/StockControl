@@ -59,9 +59,7 @@ public class CheckStock extends JFrame implements ActionListener {
         exit.addActionListener(this);
         exit.setMnemonic(KeyEvent.VK_E);
         exit.setBorder(newBorder);
-        
-        
-        
+
         JPanel top = new JPanel();
         
         add("North", top);
@@ -83,8 +81,6 @@ public class CheckStock extends JFrame implements ActionListener {
         middle.add(leftGrid);
         middle.add(rightGrid);
         add("Center", middle);
-        
-        
         
         JPanel bottom = new JPanel();
         bottom.add(check);
