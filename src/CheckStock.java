@@ -81,7 +81,7 @@ public class CheckStock extends JFrame implements ActionListener {
         middle.add(leftGrid);
         middle.add(rightGrid);
         add("Center", middle);
-        
+
         JPanel bottom = new JPanel();
         bottom.add(check);
         bottom.add(list);
