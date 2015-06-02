@@ -61,14 +61,11 @@ class BasketData {
             ++a;
         if (keys.get(i).equals(0)){
             ++b;
-            
-            
         } else {
             
         }
     }
         c = a - b;
-        
         return c;
     }
     
@@ -84,8 +81,6 @@ class BasketData {
             arrayKey = keys.get(i);
             
             if ( arrayKey == key) {
-                
-                
                 qInBasket = quantities.get(i);
             }
         }
